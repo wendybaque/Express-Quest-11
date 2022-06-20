@@ -1,32 +1,15 @@
-This repo is used for Wild Code School Express quests
+# 💪 Challenge
+* 1. Tu vas d'abord modifier la méthode POST dans routes/movies.js. A l'intérieur de cette fonction, récupére le cookie de la requête de l'utilisateur et récupére le token (astuce : lis le Cookie Parser )
 
-# Setup
+* 2. Utilise ce token pour obtenir l'identifiant de l'utilisateur. (tu devras peut-être ajouter une nouvelle fonction findByToken() dans ton modèle).
 
-## Install dependencies
-```sh
-npm i
-```
-## Create your environment variables
+* 3. Ajoute un champ user_id dans la table movies. Il s'agira d'une clé étrangère faisant référence à l'"id" de la table "users".
 
-Create a copy of the `.env.sample` file named `.env` : 
+* 4. Si un utilisateur est trouvé, crée le film et définis user_id comme étant son propriétaire. Si aucun utilisateur n'est trouvé, retourne un status 401.
 
-```
-cp .env.sample .env
-```
+* 5. Modifie la méthode GET dans routes/movies.js : Si un token est fourni, il ne doit retourner que les films créés par cet utilisateur.
 
-Then adjust variables in `.env` to match your own environment.
-
-# Run the app
-
-When developping, to automatically restart the server on file changes : 
-
-```sh
-npm run dev
-```
-
-If you don't need automatic reloadings, you can just : 
-
-```sh
-npm start
-```
-
+# 🧐 Critères de validation
+ * Ton application lit les tokens en utilisant un cookie
+ * Tu peux créer des films et définir le propriétaire
+ * Tu ne peux obtenir que les films que tu as créés
